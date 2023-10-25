@@ -1,11 +1,11 @@
 
-NAME	= main
+NAME	= convert
 
 CXX		= c++
 
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
 
-SRC		= main.cpp PrintNumber.cpp ScalarConversion.cpp
+SRC		= main.cpp ScalarConverter.cpp
 OBJ = $(SRC:%.cpp=%.o)
 
 all		: $(NAME)
