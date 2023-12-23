@@ -6,11 +6,13 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 12:03:05 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/10/25 13:25:55 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/22 11:32:18 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
 #include "Base.hpp"
 #include "A.hpp"
 #include "B.hpp"
@@ -18,6 +20,7 @@
 
 Base * generate(void)
 {
+	std::srand(std::time(0)); // use current time as seed for random generator
 	int i = rand() % 3;
 	if (i == 0)
 		return (new A());

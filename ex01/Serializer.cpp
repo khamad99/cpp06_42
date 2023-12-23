@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 11:06:56 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/10/01 11:20:06 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/22 10:59:31 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ Serializer & Serializer::operator=(Serializer const & rhs)
 	return (*this);
 }
 
-uintptr_t * Serializer::serialize(Data *ptr)
+uintptr_t Serializer::serialize(Data *ptr)
 {
-	return (reinterpret_cast<uintptr_t *>(ptr));
+	return (reinterpret_cast<uintptr_t >(ptr));
 }
 
-Data * Serializer::deserialize(uintptr_t *raw)
+Data * Serializer::deserialize(uintptr_t raw)
 {
 	return (reinterpret_cast<Data *>(raw));
 }

@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 10:31:36 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/10/25 07:42:11 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/22 08:12:30 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,16 @@ static int	isChar(std::string str)
 
 static int	isInt(std::string str)
 {
-	if (std::stoi(str) > std::numeric_limits<int>::max()
-		|| std::stoi(str) < std::numeric_limits<int>::min())
+	if (std::atoi(str.c_str()) > std::numeric_limits<int>::max()
+		|| std::atoi(str.c_str()) < std::numeric_limits<int>::min())
 		return (0);
 	return (1);
 }
 
 static int	isFloat(std::string str)
 {
-	if (std::stof(str) > std::numeric_limits<float>::max()
-		|| std::stof(str) < std::numeric_limits<float>::min())
+	if (std::atof(str.c_str()) > std::numeric_limits<float>::max()
+		|| std::atof(str.c_str()) < std::numeric_limits<float>::min())
 		return (0);
 	return (1);
 
@@ -61,8 +61,8 @@ static int	isFloat(std::string str)
 
 static int	isDouble(std::string str)
 {
-	if (std::stod(str) > std::numeric_limits<double>::max()
-		|| std::stod(str) < std::numeric_limits<double>::min())
+	if (std::atof(str.c_str()) > std::numeric_limits<double>::max()
+		|| std::atof(str.c_str()) < std::numeric_limits<double>::min())
 		return (0);
 	return (1);
 }
@@ -92,7 +92,7 @@ static e_type	getType(std::string str)
 	return (NO_TYPE);
 }
 
-static void	printChar(char c)
+void	printChar(char c)
 {
 	std::cout << "char: '" << c << "'" << std::endl;
 	std::cout << "int: " << static_cast<int>(c) << std::endl;
@@ -100,7 +100,7 @@ static void	printChar(char c)
 	std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
 }
 
-static void	printInt(int i)
+void	printInt(int i)
 {
 	std::cout << "char: ";
 	if (i < 0 || i > 127)
@@ -114,7 +114,7 @@ static void	printInt(int i)
 	std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl;
 }
 
-static void	printFloat(float f)
+void	printFloat(float f)
 {
 	std::cout << "char: ";
 	if (f < 0 || f > 127)
@@ -132,7 +132,7 @@ static void	printFloat(float f)
 	std::cout << "double: " << static_cast<double>(f) << std::endl;
 }
 
-static void	printDouble(double d)
+void	printDouble(double d)
 {
 	std::cout << "char: ";
 	if (d < 0 || d > 127)
@@ -154,7 +154,7 @@ static void	printDouble(double d)
 	std::cout << "double: " << d << std::endl;
 }
 
-static void	printLerr(std::string str)
+void	printLerr(std::string str)
 {
 	std::cout << "char: impossible" << std::endl;
 	std::cout << "int: impossible" << std::endl;
@@ -182,11 +182,11 @@ void	ScalarConverter::converter(std::string str)
 	if (type == CHAR)
 		printChar(str[0]);
 	else if (type == INT)
-		printInt(std::stoi(str));
+		printInt(std::atoi(str.c_str()));
 	else if (type == FLOAT)
-		printFloat(std::stof(str));
+		printFloat(std::atof(str.c_str()));
 	else if (type == DOUBLE)
-		printDouble(std::stod(str));
+		printDouble(std::atof(str.c_str()));
 	else if (type == LERR)
 		printLerr(str);
 	else

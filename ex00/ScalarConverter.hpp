@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:36:08 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/10/24 14:12:02 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/22 07:58:04 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 # include <cmath>
 # include <limits>
 # include <sstream>
+# include <cstdlib>
+# include <cctype>
+
+
+
 
 enum e_type
 {
