@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 12:03:05 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/12/22 11:32:18 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/24 11:38:35 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 
 Base * generate(void)
 {
-	std::srand(std::time(0)); // use current time as seed for random generator
 	int i = rand() % 3;
 	if (i == 0)
 		return (new A());
@@ -44,14 +43,36 @@ void identify_from_pointer(Base * p)
 
 void identify_from_reference(Base & p)
 {
-	if (dynamic_cast<A*>(&p))
+	try
+	{
+		A &a = dynamic_cast<A&>(p);
+		(void)a;
 		std::cout << "A" << std::endl;
-	else if (dynamic_cast<B*>(&p))
+		return ;
+	}
+	catch (std::exception &e)
+	{
+	}
+	try
+	{
+		B &b = dynamic_cast<B&>(p);
+		(void)b;
 		std::cout << "B" << std::endl;
-	else if (dynamic_cast<C*>(&p))
+		return ;
+	}
+	catch (std::exception &e)
+	{
+	}
+	try
+	{
+		C &c = dynamic_cast<C&>(p);
+		(void)c;
 		std::cout << "C" << std::endl;
-	else
-		std::cout << "Unknown" << std::endl;
+		return ;
+	}
+	catch (std::exception &e)
+	{
+	}
 }
 
 int main(void)

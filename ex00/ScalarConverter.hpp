@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:36:08 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/12/22 07:58:04 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/24 18:55:56 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@
 # include <cstdlib>
 # include <cctype>
 
-
-
-
 enum e_type
 {
 	NO_TYPE,
@@ -37,12 +34,12 @@ enum e_type
 };
 class ScalarConverter
 {
-	public:
+	private:
 		ScalarConverter();
 		ScalarConverter(ScalarConverter const & src);
 		~ScalarConverter();
 		ScalarConverter & operator=(ScalarConverter const & src);
-
+	public:
 		static void		converter(std::string str);
 };
 

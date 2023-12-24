@@ -6,11 +6,16 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 11:29:02 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/12/22 11:15:04 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/24 11:48:46 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
+
+// To print the address stored in ‘charPointer’ reinterpret_cast<void*> is used to bypass the 
+// type-checking mechanism of C++ and allow the 
+// pointer to be printed as a generic memory address without any type-specific interpretation
+// reinterpret_cast<void *>
 
 int main(void)
 {
